@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Card from './components/Card';
+import UserList from './components/UserList';
+import "./App.css";
 
 function App() {
+  const [users, setGetUsers] = useState([{
+    name:"john",
+    age: "15",
+    id: "g1"
+  }]);
+
+
+
+  function addNewUser(userInput){
+    setGetUsers((prevUsers) => {
+    const updatedUsers = [...prevUsers];
+    updatedUsers.unshift({ name: userInput.name, age: userInput.age, id: userInput.id});
+    return updatedUsers;
+    });
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      this is the new project
+      <div className='container'>
+        <Card addInput={addNewUser}></Card>
+        <UserList users={users}></UserList>
+      </div>
     </div>
   );
 }

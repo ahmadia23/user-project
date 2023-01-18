@@ -1,0 +1,14 @@
+.user-card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: black;
+  background-color: white;
+  padding: 0.4em 1em;
+  border-radius: 6px;
+  margin-top: 2em;
+}
+
+.user-info {
+  border: solid;
+  border-width: thin;
+  padding: 0.4em 1em;
+}
